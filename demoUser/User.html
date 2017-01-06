@@ -2,7 +2,7 @@
 <html ng-app="userapp">
 <head>
     <title></title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <link href="content/bootstrap.min.css" rel="stylesheet" />
     <link href="content/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
                     <!-- E-mail -->
                     <label class="control-label" for="email">Birthday</label>
                     <div class="controls">
-                        <input id="datetimepicker4" type="text" ng-model="birthday" name="birthday"/>
+                        <input id="datetimepicker4" type="text" ng-model="birthday" name="birthday" />
 
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="control-group">
                     <!-- E-mail -->
                     <label class="control-label" for="email">E-mail</label>
-                   
+
                     <div class="controls">
                         <input type="text" id="email" name="email" placeholder="" class="input-xlarge" ng-model="email" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" required>
                         <p class="text-danger" ng-show="userform.email.$error.required">Email is required </p>
@@ -90,7 +90,7 @@
                     <!-- E-mail -->
                     <label class="control-label" for="email">Job</label>
                     <div class="controls">
-                        <select class="form-control" ng-model="job"style="width: 15%">
+                        <select class="form-control" ng-model="job" style="width: 15%">
 
                             <option value="Developer">Developer</option>
                             <option value="Tester">Tester</option>
@@ -102,8 +102,8 @@
                     <!-- E-mail -->
                     <label class="control-label" for="email">Introduce</label>
                     <div class="controls">
-                        <textarea class="input-xlarge" ng-model="introduce"></textarea>
-
+                        <textarea class="input-xlarge" ng-model="introduce" ng-maxlength="1000"></textarea>
+                        <p class="text-danger" ng-show="userform.password.$dirty&&userform.introduce.$error.maxlength">Introduce must have max 1000 characters</p>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@
             <label>Sex</label>: <label class="text-info" for="username">{{user.sex}}</label><br />
             <label>Email</label>:
             <ul>
-                <li ng-repeat="i in user.email" >{{i}}</li>
+                <li ng-repeat="i in user.email">{{i}}</li>
             </ul>
             <br />
             <label>Phone</label>:
@@ -132,11 +132,11 @@
             </ul>
             <br />
             <label>Job</label>: <label class="text-info" for="username">{{job}}</label><br />
-            <label>Introduce</label>: <label class="text-info" for="username">{{introduce}}</label><br/>
+            <label>Introduce</label>: <label class="text-info" for="username">{{introduce}}</label><br />
             <div class="controls">
                 <button class="btn btn-success" ng-click="edit()">Edit</button>
             </div>
-            <br/>
+            <br />
 
             <form class="form-horizontal" name="addemailform">
                 <div class="control-group">
@@ -148,7 +148,7 @@
                         <p class="text-danger" ng-show="addemailform.email.$error.pattern">Email is invalid </p>
                     </div>
                 </div>
-                <br/>
+                <br />
                 <div class="controls">
                     <button class="btn btn-success" ng-disabled="addemailform.$invalid" ng-click="addemail()">Add Email</button>
                 </div>
@@ -164,21 +164,21 @@
                 </div>
                 <br />
                 <div class="controls">
-                    <button class="btn btn-success" ng-disabled="addphoneform.$invalid"  ng-click="addphone()">Add Phone</button>
+                    <button class="btn btn-success" ng-disabled="addphoneform.$invalid" ng-click="addphone()">Add Phone</button>
                 </div>
             </form>
 
-</div>
+        </div>
     </div>
 
 
-<script src="content/jquery-3.1.1.min.js"></script>
-<script src="content/angular.min.js"></script>
-<script src="content/bootstrap.min.js"></script>
-<script src="content/bootstrap-datetimepicker.min.js"></script>
-<script src="content/jquery.datetimepicker.full.js"></script>
+    <script src="content/jquery-3.1.1.min.js"></script>
+    <script src="content/angular.min.js"></script>
+    <script src="content/bootstrap.min.js"></script>
+    <script src="content/bootstrap-datetimepicker.min.js"></script>
+    <script src="content/jquery.datetimepicker.full.js"></script>
     <script src="content/app.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript">
     $.datetimepicker.setLocale('vi');
     $('#datetimepicker4')
         .datetimepicker({
@@ -186,7 +186,7 @@
             format: 'd/m/Y'
         });
 
-</script>
+    </script>
 
 
 </body>
