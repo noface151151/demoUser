@@ -80,12 +80,7 @@ var app = angular.module("userapp", [])
                 $scope.edit = function () {
                 
                     
-                    $scope.$watch(function() {
-                            return $scope.user.email;
-                        },
-                        function(newval, oldval) {
-                            $scope.user.email = newval;
-                        });
+                 
                     $scope.flag = false;
 
                 }
@@ -114,17 +109,6 @@ var app = angular.module("userapp", [])
                             $scope.user.phone.push($scope.phoneadd);
                         }
                     }
-                $scope.$watch(function () {
-                    return $scope.user.email;
-                },
-                    function(newval, oldval) {
-                        $scope.user.email = newval;
-                    })
-                $scope.$watch(function () {
-                    return $scope.user.phone;
-                },
-                   function (newval, oldval) {
-                       $scope.user.phone = newval;
-                   })
+         
 
     })
