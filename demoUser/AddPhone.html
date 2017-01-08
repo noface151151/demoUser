@@ -1,0 +1,17 @@
+﻿
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add Phone number</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="addphoneform">
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" placeholder="Enter Phone Number Here.." class="form-control" ng-model="phone" name="phone" required>
+            <p class="text-danger" ng-show="addphoneform.phone.$error.required">Phone number is required </p>
+        </div>
+        <button type="button" class="btn btn-lg btn-info" ng-disabled="addphoneform.$invalid" ng-click="addphone()">Add</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="quit()">Cancel</button>
+</div>

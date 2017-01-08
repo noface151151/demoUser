@@ -1,0 +1,82 @@
+﻿
+    <div class="container" ng-controller="UserRegisterController">
+        <h1 class="well">Registration Form</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form name="registerform">
+                    <div class="col-sm-12">
+                      
+                            <div class="form-group">
+                                <label>Full Name</label>
+                               <input type="text" placeholder="Enter Full Name Here.." class="form-control" ng-model="fullname">                               
+                            </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>User Name</label>
+                                <input type="text" placeholder="Enter User Name Here.." class="form-control" ng-model="username" name="username" required>
+                                <p ng-show="registerform.username.$error.required" class="text-danger">Username is required</p>
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Enter Password Here.." class="form-control" name="password" ng-model="password" ng-minlength="6" ng-maxlength="32" required >
+                                <p class="text-danger" ng-show="registerform.password.$error.required">Password is required</p>
+                                <p class="text-danger" ng-show="registerform.password.$dirty&&registerform.password.$error.minlength">Password must have at least 6 characters</p>
+                                <p class="text-danger" ng-show="registerform.password.$dirty&&registerform.password.$error.maxlength">Password must have max 32 characters</p>
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" placeholder="Enter Confirm Password Here.." class="form-control" name="confirmpassword" ng-model="confirmpassword" data-password-verify="password" required>
+                                <p class="text-danger" ng-show="registerform.confirmpassword.$error.required">Password confirm is required</p>
+                                <p class="text-danger" ng-show="registerform.confirmpassword.$error.passwordVerify">Password not match</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>Sex</label>
+                                <input type="text" placeholder="Enter Your Sex Here.." class="form-control" ng-model="sex">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Birthday</label>
+                                <input type="text" placeholder="Enter Birthday Here.." class="form-control" id="datetimepicker4" ng-model="birthday">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Job</label>
+                                <select class="form-control" ng-model="job">
+
+                                    <option value="Developer">Developer</option>
+                                    <option value="Tester">Tester</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control" ng-model="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="text" placeholder="Enter Email Address Here.." class="form-control" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" ng-model="email" name="email" required>
+                            <p class="text-danger" ng-show="registerform.email.$error.required">Email is required </p>
+                            <p class="text-danger" ng-show="registerform.email.$error.pattern">Email is invalid </p>
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>Introduce yourself</label>
+                            <textarea placeholder="Enter Introduce yourself Here.." rows="3" class="form-control" ng-model="introduce" name="introduce" ng-maxlength="1000"></textarea>
+                            <p class="text-danger" ng-show="registerform.introduce.$dirty&&registerform.introduce.$error.maxlength">Introduce must have max 1000 characters</p>
+                        </div>
+                        <button type="button" class="btn btn-lg btn-info" ng-disabled="registerform.$invalid" ng-click="submit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $.datetimepicker.setLocale('vi');
+    $('#datetimepicker4')
+        .datetimepicker({
+            timepicker: false,
+            format: 'd/m/Y'
+        });
+
+</script>

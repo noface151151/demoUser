@@ -1,0 +1,64 @@
+﻿
+    <div class="container" ng-controller="UserDetailController" ng-show="user">
+        <h1 class="well">User detail</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form name="registerform">
+                    <div class="col-sm-12">
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" ng-model="user.fullname" readonly id="fullname">
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>User Name</label>
+                                <input type="text" class="form-control" ng-model="user.username" name="username" readonly>
+                                
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Sex</label>
+                                <input type="text" class="form-control" ng-model="user.sex" readonly>
+                            </div>
+                         
+                        </div>
+                        <div class="row">
+                           
+                            <div class="col-sm-6 form-group">
+                                <label>Birthday</label>
+                                <input type="text" class="form-control" ng-model="user.birthday" readonly>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Job</label>
+                                <input type="text" readonly class="form-control" ng-model="user.job">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <ul>
+                                <li ng-repeat="i in user.phone">{{i}}</li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <ul>
+                                <li ng-repeat="i in user.email">{{i}}</li>
+                            </ul>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label>Introduce yourself</label>
+                            <textarea readonly rows="3" class="form-control" ng-model="user.introduce"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-lg btn-info" ng-click="editRedirect()">Edit</button>
+                        <button type="button" class="btn btn-lg btn-info" ng-click="addemail()">Add Email</button>
+                        <button type="button" class="btn btn-lg btn-info" ng-click="addphone()">Add Phone Number</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

@@ -94,6 +94,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddEmail.html" />
+    <Content Include="AddPhone.html" />
+    <Content Include="content\angular-route.min.js" />
+    <Content Include="content\style.css" />
+    <Content Include="content\ui-bootstrap-tpls-2.1.4.min.js" />
+    <Content Include="EditEmail.html" />
+    <Content Include="EditPhone.html" />
+    <Content Include="EditUser.html" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -115,7 +124,8 @@
     <Content Include="content\jquery-3.1.1.min.js" />
     <Content Include="content\jquery.datetimepicker.css" />
     <Content Include="content\jquery.datetimepicker.full.js" />
-    <Content Include="User.html" />
+    <Content Include="UserDetail.html" />
+    <Content Include="UserRegister.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
